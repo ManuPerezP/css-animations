@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 600px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 95vh;
+}
+
+.animation-section {
+  display: block;
+  height: 100vh;
+  width: 700px;
+  text-align: center;
+  margin: auto;
+}
+
+@keyframes animation_name {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  50% {
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+h1 {
+  animation: animation_name;
+  animation-duration: 5s;
+  margin-top: 2rem;
+  font-size: 5rem;
+  animation-delay: 3s;
+}
+
+@keyframes animation_name-2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  50% {
+    transform: translateY(80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+p {
+  font-size: 2rem;
+  text-transform: uppercase;
+  animation: animation_name-2 5s backwards alternate;
+  animation-delay: 2s;
+}
+
+/*animation with colors*/
+
+@keyframes colors {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+.animation-color {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background-color: red;
+  animation-name: colors;
+  animation-duration: 4s;
+  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
+}
+
+/*Animation direction*/
+
+@keyframes animation-direction {
+  0% {
+    background-color: #ff0000;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: #ffff00;
+    left: 200px;
+    top: 0px;
+  }
+
+  50% {
+    background-color: #0000ff;
+    left: 200px;
+    top: 200px;
+  }
+
+  75% {
+    background-color: #008000;
+    left: 0px;
+    top: 200px;
+  }
+
+  100% {
+    background-color: #ff0000;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.animation-direction {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: animation-direction;
+  animation-duration: 4s;
+  animation-direction: normal;
+  animation-direction: reverse;
+  animation-direction: alternate;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: 3;
+}
+
+/*Animation speed curve*/
+
+@keyframes motion_timing {
+  from {
+    left: 0;
+  }
+  to {
+    left: 600px;
+    background-color: blue;
+  }
+}
+
+div.animation-timing-function {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  background-color: red;
+  animation-name: motion_timing;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  animation-timing-function: ease;
+  animation-timing-function: linear;
+  animation-timing-function: ease-in;
+  animation-timing-function: ease-out;
+  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(6.175, 0.185, 0.32, 3.275);
+}
+
+/*animation fill mode*/
+
+@keyframes animation-forward {
+  from {
+    top: 0;
+  }
+  to {
+    top: 200px;
+    background-color: green;
+  }
+}
+
+@keyframes animation-backward {
+  from {
+    top: 0;
+  }
+  to {
+    top: 200px;
+    background-color: yellow;
+  }
+}
+
+@keyframes animation-both {
+  from {
+    top: 0;
+    background-color: blue;
+  }
+  to {
+    top: 200px;
+    background-color: purple;
+  }
+}
+
+div.animation-fill-mode {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  position: relative;
+  animation-name: animation-both;
+  /* animation-name: animation-backward;
+  animation-name: animation-both;*/
+  animation-duration: 3s;
+  animation-fill-mode: none;
+  animation-fill-mode: forwards;
+  animation-fill-mode: backwards;
+  animation-fill-mode: both;
+}
+
+/**Animation short hand props*/
+
+@keyframes animation-shorthand {
+  0% {
+    left: 0%;
+    top: 0;
+  }
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0;
+  }
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background-color: red;
+    left: 0;
+    top: 0;
+  }
+}
+
+div.animation-shorthand {
+  width: 200px;
+  height: 200px;
+  background-color: purple;
+  position: relative;
+  animation-name: animation-shorthand;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  animation: animation-shorthand 5s linear 2s infinite alternate;
+}
